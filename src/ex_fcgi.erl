@@ -41,7 +41,7 @@
 -type req() :: {req_id(), Ref::reference(), Timer::reference(), pid(),
                 MonitorRef::reference()}.
 
--export_type([address/0, port_number/0,
+-export_type([address/0, port_number/0, message/0,
               req_id/0, role/0, status/0, app_status/0,
               key/0, value/0, param/0, server/0]).
 
@@ -80,7 +80,7 @@ start(Name, Address, Port) ->
 stop(Name) ->
   ex_fcgi_sup:stop_child(Name).
 
--spec begin_request(server(), role(), [param()], uint32()) -> {ok, reference()}.
+-spec begin_request(server(), role(), [param()], uint32()) -> {ok, reference()} | error.
 %% @doc Make a FastCGI request.
 begin_request(Server, Role, Params, Timeout) ->
   case ex_fcgi_protocol:encode_params(Params) of
