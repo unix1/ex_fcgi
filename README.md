@@ -4,6 +4,10 @@ ex_fcgi
 ex_fcgi is a straightforward [FastCGI](http://www.fastcgi.com/) client written
 in Erlang.
 
+This is a fork of [extend/ex_fcgi](https://github.com/extend/ex_fcgi) which is
+no longer maintained in that repo. I have made minor updates for dialyzer so
+it has a clean outpout for [cowboy_fcgi](https://github.com/unix1/cowboy_fcgi).
+
 Goals
 -----
 
