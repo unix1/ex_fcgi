@@ -295,6 +295,8 @@ initial_state(Parent, Address, Port) ->
          monitors = ets:new(monitors, [private])}.
 
 -spec next_req_id(#state{}) -> {req_id(), #state{}}.
+next_req_id(State = #state{next_id = 65535}) ->
+  {65535, State#state{next_id = 0}};
 next_req_id(State = #state{next_id = ReqId}) ->
   {ReqId, State#state{next_id = ReqId + 1 rem 65535}}.
 
