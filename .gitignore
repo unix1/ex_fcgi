@@ -1,12 +1,14 @@
-.ex_fcgi_dialyzer.plt
+.erlang.mk/
 .eunit/
 .idea/
 .rebar/
 *.kdev4
+*.plt
 _build/
 ex_fcgi.iml
 deps/
 ebin/
+ex_fcgi.d
 logs/
 rebar.lock
 test/*.beam
